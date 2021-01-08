@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect} from "react";
+import React, { useState} from "react";
 import Weather from './components/Weather.js';
 
 function App() {
@@ -10,9 +10,7 @@ function App() {
     city:"",
     country:""
   })
-  const [weatherdata, setweatherdata] = useState([
-
-  ])
+  const [weatherdata, setweatherdata] = useState([])
 
   const handleChange=(e)=>{
     let name=e.target.name;
@@ -27,29 +25,21 @@ function App() {
 
   async function apiData(e){
     e.preventDefault();
-    if(Form.city==""){
+    if(Form.city===""){
       alert("Please enter the city name");
     }
     else{
+      console.log(weatherdata);
       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Form.city}&appid=${APIKEY}`)
-      //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-      .then(res => (res.json())).then((data)=>data);
-
-      console.log(data);
-      setweatherdata({
-        data:data,
-      });
+      const jsonobj= await data.json();
+      
+     //console.log(jsonobj);
+     //alert(jsonobj.main.temp);
+      setweatherdata(jsonobj.main);
+      console.log(weatherdata);
+      
     }
   } 
-  /* useEffect(  () => {
-     {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Form.city}&appid=${APIKEY}`);
-      console.log("response", response);
-      const jsonobj = await response.json();
-      console.log("JSON", jsonobj);
-    }
-   }, [])*/
-  
   return (
     <div className="App ">
       <h2 className="jumbotron font-weight-bold"> Weather Report Application</h2>
@@ -59,10 +49,9 @@ function App() {
         <button type="submit" onClick={(e)=>apiData(e)} className="form-control btn-outline-info"> Submit</button>
       </form>
       {
-      (weatherdata!=undefined ? 
-      <div>
-       < Weather data={weatherdata} />
-      </div> : null)
+      ( (weatherdata!==undefined)? <div>
+      < Weather data={weatherdata}/>  </div> 
+      : null )
     }
     </div>
   );
