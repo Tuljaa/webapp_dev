@@ -24,23 +24,18 @@ const App=() => {
   }
   async function apiData(e){
     e.preventDefault();
-    if(Form.city===""){
-      alert("Please enter the city name");
-    }
-    else{
+    
       const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Form.city}&appid=${APIKEY}`)
       const jsonobj= await data.json();
       setweather({data:jsonobj.main});
-      
-    }
-  } 
+      } 
   return (
-    <div className="App ">
-      <h2 className="jumbotron font-weight-bold"> Weather Report Application</h2>
-      <form className="form-group">
-        <input type="text" name="city" onChange={(e)=>handleChange(e)} placeholder="Enter City Name" className="form-control active "/><br></br>
-        <input type ="text" name="country" onChange={(e)=>handleChange(e)} placeholder="Enter Country Name" className="form-control"/><br></br>
-        <button type="submit" onClick={(e)=>apiData(e)} className="form-control btn-outline-info"> Submit</button>
+    <div className="App" data-test="App">
+      <h2 className="jumbotron font-weight-bold" data-test="header"> Weather Report Application</h2>
+      <form className="form-group" data-test="form">
+        <input type="text" data-test="cityN" name="city" value onChange={(e)=>handleChange(e)} placeholder="Enter City Name" className="form-control active " /><br></br>
+        <input type ="text" name="country" value onChange={(e)=>handleChange(e)} placeholder="Enter Country Name" className="form-control" data-test="countryN"/><br></br>
+        <button type="submit" onClick={(e)=>apiData(e)} className="form-control btn-outline-info" data-test="submit"> Submit</button>
       </form>
       {
       ( (weather.data!==undefined)? <div>
