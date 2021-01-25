@@ -2,7 +2,7 @@ import React from 'react';
 import Enzyme from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import {shallow} from 'enzyme';
-import Weather from './Weather';
+import Weather from '../../../components/Weather';
 
 Enzyme.configure({ adapter: new Adapter() });
 let weatherData = {

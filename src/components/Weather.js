@@ -1,5 +1,5 @@
 import React from 'react'
-import '../App.css';
+import '../css/App.css';
 import icon from '../cloudy.png';
 import location from '../placeholder.png';
 

@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import React, { useState} from "react";
 import Weather from './components/Weather.js';
 
