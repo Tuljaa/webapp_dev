@@ -1,38 +1,68 @@
 .App {
   text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-image: url("backgaroundweather.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+  padding: 1%;
+  font-size: large;
+}
+ hr{
+   height: 5%;
+   background-color: black;
+ }
+ .location {
+   background-color: indigo;
+   text-align: start;
+ }
+
+
+
+ .hourly {
+  margin: 10px;
+  width: 250px;
+  height: 100px;
+ }
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-.App-link {
-  color: #61dafb;
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }
+
+ .carousel {
+   margin-left: 25%;
+   width: 30%;
+ }
+
