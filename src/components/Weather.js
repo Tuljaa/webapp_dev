@@ -27,12 +27,11 @@ function Weather(props) {
 
     while (props.data.list[id].dt_txt.substring(11,19)!=="00:00:00"){
           x++;
-          console.log(x);
           id++
     }
 
     return (
-    <div >
+    <div data-test="weatherUI" >
                <div className="d-inline-block location">
                <img src={location} alt="Icon" style={stylesImg} ></img><br></br>
                 <h2 >{props.data.city.name} <span>{props.data.city.country}</span></h2>

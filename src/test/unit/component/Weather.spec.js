@@ -3,11 +3,13 @@ import Enzyme from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import {shallow} from 'enzyme';
 import Weather from '../../../components/Weather';
+import data from '../../../components/mockdata';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+
 const setUp=()=>{
-    const component=shallow(<Weather/>);
+    const component=shallow(<Weather data={data}/>);
     return component;
 }
 
@@ -27,8 +29,8 @@ describe ('Weather component',()=>{
     expect(component).toBeTruthy();
     });
      
-    it('should check ListItem is getting rendered', ()=>{
-        const wrapper = findAttribute(component,'listitem');
-        expect(wrapper.length).toBe(4);
+    it('should check Weatherdata is getting rendered', ()=>{
+        const wrapper = findAttribute(component,'weatherUI');
+        expect(wrapper).toBeTruthy();
     })
 });
