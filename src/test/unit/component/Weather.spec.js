@@ -5,14 +5,9 @@ import {shallow} from 'enzyme';
 import Weather from '../../../components/Weather';
 
 Enzyme.configure({ adapter: new Adapter() });
-let weatherData = {
-    temp:302,
-    feels_like: 33,
-    temp_min:444,
-    temp_max:232
-}
+
 const setUp=()=>{
-    const component=shallow(<Weather data={weatherData}/>);
+    const component=shallow(<Weather/>);
     return component;
 }
 

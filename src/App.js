@@ -25,10 +25,7 @@ const App=() => {
 
   async function apiData(e){
       e.preventDefault();
-      if(Form.city==="" || Form.country===""){
-        alert("Enter values");
-          return
-      }
+      
       const data= await fetch(` https://api.openweathermap.org/data/2.5/forecast?q=${Form.city}&units=metric&appid=${APIKEY}`)
       const jsonobj= await data.json(); 
       setweather({data:jsonobj});

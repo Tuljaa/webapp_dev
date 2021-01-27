@@ -45,7 +45,7 @@ describe ('App component',()=>{
     
     test('renders weather Report Application', () => {
       render(<App />);
-      const linkElement = screen.getByText(/Weather Report Application/i);
+      const linkElement = screen.getByText(/Weather Forecast/i);
       expect(linkElement).toBeInTheDocument();
     });
 
@@ -63,11 +63,6 @@ describe ('App component',()=>{
       const wrapper=findAttribute(component,'submit');
       expect(wrapper.length).toBe(1);
     })
-
-    it('should check default value of Prop ',() => {
-      const wrapper=findAttribute(component,'cityN').at(0).prop('value');
-      expect(wrapper).toBeTruthy();
-    });
 
     it('should handle input city',()=>{
      const wrap=mount(<App/>);
