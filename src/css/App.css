@@ -1,17 +1,19 @@
 .App {
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   background-image: url("../resourses/images/bg.jpg");
-}
+  min-height: 100vh;
+  flex-direction: column;  
+  color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+} 
  .location {
    float: left;
-   margin-left:5%;
+   margin-left:15%;
    margin-top: 5%;
  }
  .mycard {
-  margin-right:2%;
+  margin-right:8%;
    float: right;
  }
  label {
@@ -22,14 +24,12 @@
    height: 5%;
    background-color: black;
  }
-
 .flip-card {
   background-color: transparent;
   width: 400px;
   height: 330px;
   padding: 1%;
 }
-
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -38,11 +38,9 @@
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
 }
-
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
-
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -50,8 +48,6 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
-
 .flip-card-back {
   transform: rotateY(180deg);
 }

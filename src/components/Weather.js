@@ -34,7 +34,7 @@ function Weather(props) {
     <div data-test="weatherUI" >
                <div className="d-inline-block location">
                <img src={location} alt="Icon" style={stylesImg} ></img><br></br>
-                <h2 >{props.data.city.name} <span>{props.data.city.country}</span></h2>
+                <h2 >{props.data.city.name} ( <span>{props.data.city.country}</span> )</h2>
                 </div>
             
                 <div className="d-inline-block">
@@ -76,7 +76,7 @@ function Weather(props) {
            </div>
 
            <br></br><br></br><br></br><br></br><br></br><hr></hr>
-            <h3 >Checkout Next 4 Day Hourly Forecast</h3> 
+            <h3 >Checkout Hourly Forecast in each day</h3> 
         { 
            Object.keys(props.data.list).map( (i , index) => {
 
@@ -98,12 +98,12 @@ function Weather(props) {
                             <div className="flip-card-back">
                              <div className="d-inline-block">
                                  <h4 className="m-3"><u>Checkout next 6 Hour Temparature</u></h4>
-                             <h5>* Temparature at {props.data.list[index+1].dt_txt.substring(11,13)}<span className="small">am</span>  -  {props.data.list[index+1].main.temp}<span>&#8451;</span></h5>
-                             <h5>* Temparature at {props.data.list[index+2].dt_txt.substring(11,13)}<span className="small">am</span>  -  {props.data.list[index+2].main.temp}<span>&#8451;</span></h5>
-                             <h5>* Temparature at {props.data.list[index+3].dt_txt.substring(11,13)}<span className="small">am</span>  -  {props.data.list[index+3].main.temp}<span>&#8451;</span></h5>
-                             <h5>* Temparature at {props.data.list[index+4].dt_txt.substring(11,13)}<span className="small">pm</span>  -  {props.data.list[index+4].main.temp}<span>&#8451;</span></h5>
-                             <h5>* Temparature at {props.data.list[index+5].dt_txt.substring(11,13)}<span className="small">pm</span>  -  {props.data.list[index+5].main.temp}<span>&#8451;</span></h5>
-                             <h5>* Temparature at {props.data.list[index+6].dt_txt.substring(11,13)}<span className="small">pm</span>  -  {props.data.list[index+6].main.temp}<span>&#8451;</span></h5>
+                             <h5> Temparature at {props.data.list[index+1].dt_txt.substring(11,13)}<span className="small">am</span>  -  {props.data.list[index+1].main.temp}<span>&#8451;</span></h5>
+                             <h5> Temparature at {props.data.list[index+2].dt_txt.substring(11,13)}<span className="small">am</span>  -  {props.data.list[index+2].main.temp}<span>&#8451;</span></h5>
+                             <h5> Temparature at {props.data.list[index+3].dt_txt.substring(11,13)}<span className="small">am</span>  -  {props.data.list[index+3].main.temp}<span>&#8451;</span></h5>
+                             <h5> Temparature at {props.data.list[index+4].dt_txt.substring(11,13)}<span className="small">pm</span>  -  {props.data.list[index+4].main.temp}<span>&#8451;</span></h5>
+                             <h5> Temparature at {props.data.list[index+5].dt_txt.substring(11,13)}<span className="small">pm</span>  -  {props.data.list[index+5].main.temp}<span>&#8451;</span></h5>
+                             <h5> Temparature at {props.data.list[index+6].dt_txt.substring(11,13)}<span className="small">pm</span>  -  {props.data.list[index+6].main.temp}<span>&#8451;</span></h5>
                         </div>  
                      </div>
                     </div>
